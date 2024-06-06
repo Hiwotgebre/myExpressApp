@@ -24,15 +24,21 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
+
 app.get('/users/:username', (req, res) => {
     res.render('user', {username: req.params.username})
 });
 
-//Create a Route to download the image
-app.get('/download', (req, res) => {
-    const file = `${__dirname}/publicImage/animalpic.jpg`;
-    res.download(file, 'DownloadedAnimalPic.jpg', (err) => {
+app.get('/download-page', (req, res) => {
+    res.render('download'); //This will render 'download.ejs' page
+})
+
+//Create a Route to download the image by clicking the button
+app.get('/download-image', (req, res) => {
+    const filePath = `${__dirname}/publicImage/animalpic.jpg`;
+    res.download(filePath, 'AnimalPic.jpg', (err) => {
         if (err) {
+                //Handle error
             console.error("Error downloading the file:", err);
             res.status(500).send("Error occured while downloding the file.");
         }
