@@ -48,28 +48,7 @@ app.use((err, req, res, next) => {
 });
 
 
-// app.set('view engine', 'ejs');
-// app.set('views', path.join(__dirname, 'views'))
 
-//   const fs = require('fs');
-//   const filePath = `${__dirname}/publicImage/animalpic.jpg`;
-  
-//   fs.stat(filePath, (err, stats) => {
-//     if (err) {
-//         console.error("File does not exist:", filePath);
-//         return; // Stop further execution
-//     }
-
-//     app.get('/download', (req, res) => {
-//         res.download(filePath, 'OptionalNewFileName.pdf', (err) => {
-//             if (err) {
-//                 console.log(err);
-//                 res.send("Error occurred while downloading the file.");
-//                 return;
-//             }
-//         });
-//     });
-// });
 
 
 
